@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from './services/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'uiApiAngular';
+
+  usuarioLogado: boolean = false
+  shared: SharedService;
+
+  constructor(){
+    this.shared = SharedService.getInstance();
+  }
+
+  ngOnInit(){
+    this.shared.usuarioLogado.subscribe(
+      show => this.usuarioLogado = show
+    );
+  }
+
+
 }

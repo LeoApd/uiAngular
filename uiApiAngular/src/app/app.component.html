@@ -1,3 +1,5 @@
-<app-home></app-home>
-
-<app-login></app-login>
+<app-header-main *ngIf="!usuarioLogado"></app-header-main>
+<app-header-user *ngIf="usuarioLogado"></app-header-user>
+<div>
+  <router-outlet></router-outlet>
+</div>

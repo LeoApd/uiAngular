@@ -2,14 +2,14 @@
     <h1>Login</h1>
     <hr>
     <form id="section-auth">
-        <input type="text" placeholder="Login">
-        <input type="password" placeholder="Senha"> 
-        <button>Logar</button>
+        <input type="text" placeholder="Login" [(ngModel)]="userAuth.login" name="login">
+        <input type="password" placeholder="Senha" [(ngModel)]="userAuth.password" name="password">
+        <button (click)='login()'>Logar</button>
         <div class="form-opcao">
             <a href="#">Esqueci a senha</a>
             <a href="#">Cadastre-se</a>
         </div>
-        
+
     </form>
-    
+
 </section>
